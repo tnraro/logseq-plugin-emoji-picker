@@ -11,4 +11,5 @@ html, body {
 emoji-picker {
   --input-padding: 0.5rem;
   --input-border-radius: 0;
+  box-shadow: 0 10px 15px -3px hsl(0deg 0% 0% / 0.1),0 4px 6px -2px hsl(0deg 0% 0% / 0.05);
 }
