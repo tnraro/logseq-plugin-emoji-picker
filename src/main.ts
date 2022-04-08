@@ -23,6 +23,7 @@ async function main() {
   `;
   $emojiPicker.shadowRoot?.appendChild($customStyle);
   $app.appendChild($emojiPicker);
+  const $search = $emojiPicker.shadowRoot!.querySelector("#search")! as HTMLInputElement;
 
   const popper = createPopper($app, $emojiPicker, {
     placement: "right-start",
@@ -36,7 +37,6 @@ async function main() {
 
   async function show() {
     await updatePosition();
-    const $search = $emojiPicker.shadowRoot!.querySelector("#search")! as HTMLInputElement;
     $search.value = "";
     logseq.showMainUI();
     setTimeout(() => {
