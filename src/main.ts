@@ -28,12 +28,6 @@ async function main() {
     placement: "right-start",
     modifiers: [
       {
-        name: "offset",
-        options: {
-          offset: [0, 6],
-        }
-      },
-      {
         name: "eventListeners",
         enabled: false
       },
@@ -42,7 +36,12 @@ async function main() {
 
   async function show() {
     await updatePosition();
+    const $search = $emojiPicker.shadowRoot!.querySelector("#search")! as HTMLInputElement;
+    $search.value = "";
     logseq.showMainUI();
+    setTimeout(() => {
+      $search.focus();
+    }, 100);
   }
   function hide(opts?: {
     restoreEditingCursor: boolean;
