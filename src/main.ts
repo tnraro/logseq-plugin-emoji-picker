@@ -86,7 +86,6 @@ async function main() {
       throw new Error("Cannot get cursor position");
     }
     const { left, top, rect } = position;
-    console.log($emojiPicker.style.top, $emojiPicker.style.left);
     $app.style.top = `calc(${top + rect.top + 6}px - 1rem)`;
     $app.style.left = `${left + rect.left}px`;
     popper.update();
